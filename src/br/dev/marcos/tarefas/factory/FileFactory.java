@@ -1,7 +1,9 @@
-package br.dev.marcelo.tarefas.factory;
+package br.dev.marcos.tarefas.factory;
 
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
+import java.io.IOException;
 
 public class FileFactory {
 
@@ -10,17 +12,13 @@ public class FileFactory {
 
 	private String pathFuncionarios = "C:\\Users\\25132758\\tarefas\\funcionarios.csv";
 
-	public BufferedWriter getBufferedWriter() {
-		try {
+	public BufferedWriter getBufferedWriter() throws FileNotFoundException, IOException {
+		
 			fw = new FileWriter(pathFuncionarios, true);
 			bw = new BufferedWriter(fw);
 
 			return bw;
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			return null;
-
-		}
+		
 
 	}
 

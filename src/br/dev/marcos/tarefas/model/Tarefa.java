@@ -1,4 +1,4 @@
-package br.dev.marcelo.tarefas.model;
+package br.dev.marcos.tarefas.model;
 
 import java.time.LocalDateTime;
 

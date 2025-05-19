@@ -1,33 +1,65 @@
-package br.dev.marcelo.tarefas;
+package br.dev.marcos.tarefas;
 
+
+import java.util.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-import br.dev.marcelo.tarefas.dao.FuncionarioDAO;
-import br.dev.marcelo.tarefas.model.Funcionario;
-import br.dev.marcelo.tarefas.model.Tarefa;
+import br.dev.marcos.tarefas.dao.FuncionarioDAO;
+import br.dev.marcos.tarefas.model.Funcionario;
+import br.dev.marcos.tarefas.model.Tarefa;
 
 public class Main {
 
 	// determinando caminho do arquivo que será lido
-	private static String path = "C:\\Users\\25132758\\tarefa\\tarefas.txt";
+	private static String path = "C:\\Users\\25132758\\tarefas\\funcionarios.csv";
 
-	Funcionario funcionario = new Funcionario();funcionario.setCodigo(3);funcionario.setNome("Paulo da Silva");funcionario.setMatricula("202121111");funcionario.setEmail("paulo@email.com");
-
-	FuncionarioDAO dao = new FuncionarioDAO(funcionario);dao.gravar();
 
 	public static void main(String[] args) {
 		
-		Funcionario f = new Funcionario();
-		Tarefa t = new Tarefa();
+		List<String> frutas = new ArrayList<String>();
+		List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+		List<Double> numeros = new ArrayList<Double>();
 		
-		gravarArquivo();
-		lerArquivo();
+		frutas.add("Abacaxi");
+		frutas.add("Framboesa");
+		frutas.add("Mirtilo");
+		frutas.add("jabuticaba");
 		
+		numeros.add(4.9);
+		numeros.add(12.78);
+		
+		
+		Funcionario funcionario = new Funcionario();
+		funcionario.setCodigo(7);
+		funcionario.setNome("Thiago pai do ano");
+		funcionario.setMatricula("202121111");
+		funcionario.setEmail("filhomota@email.com");
+		
+		Funcionario funcionario2 = new Funcionario();
+		funcionario2.setCodigo(8);
+		funcionario2.setNome("Teteca do Victor");
+		funcionario2.setMatricula("201921111");
+		funcionario2.setEmail("tetecadomal@email.com");
+		
+		funcionarios.addAll(List.of(funcionario,funcionario2));
+
+		System.out.println(frutas);
+		System.out.println(funcionarios);
+		
+		for (Funcionario f : funcionarios) {
+			System.out.printf(f.getNome() + " - " + f.getEmail() + "/");
+		}
+
+//		FuncionarioDAO dao = new FuncionarioDAO(funcionario);
+//		dao.gravar();
+//		
 	}
 
 	private static void gravarArquivo() {
