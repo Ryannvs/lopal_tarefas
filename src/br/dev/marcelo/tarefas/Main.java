@@ -7,13 +7,24 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import br.dev.marcelo.tarefas.dao.FuncionarioDAO;
 import br.dev.marcelo.tarefas.model.Funcionario;
 import br.dev.marcelo.tarefas.model.Tarefa;
 
 public class Main {
 	
 	//determinando caminho do arquivo que será lido
-	private static String path = "C:\\Users\\25132416\\tarefa\\tarefas.txt";
+	private static String path = "C:\\Users\\25132758\\tarefa\\tarefas.txt";
+	
+	Funcionario funcionario = new Funcionario();
+	
+	funcionario.setCodigo(1);
+	funcionario.setNome("Paulo da Silva");
+	funcionario.setMatricula("202121111");
+	funcionario.setEmail("paulo@email.com");
+	
+	
+	FuncionarioDAO dao = new FuncionarioDAO(funcionario);
 	
 	public static void main(String[] args) {
 		
