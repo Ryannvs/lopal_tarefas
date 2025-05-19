@@ -12,20 +12,14 @@ import br.dev.marcelo.tarefas.model.Funcionario;
 import br.dev.marcelo.tarefas.model.Tarefa;
 
 public class Main {
-	
-	//determinando caminho do arquivo que será lido
+
+	// determinando caminho do arquivo que será lido
 	private static String path = "C:\\Users\\25132758\\tarefa\\tarefas.txt";
-	
-	Funcionario funcionario = new Funcionario();
-	
-	funcionario.setCodigo(1);
-	funcionario.setNome("Paulo da Silva");
-	funcionario.setMatricula("202121111");
-	funcionario.setEmail("paulo@email.com");
-	
-	
-	FuncionarioDAO dao = new FuncionarioDAO(funcionario);
-	
+
+	Funcionario funcionario = new Funcionario();funcionario.setCodigo(3);funcionario.setNome("Paulo da Silva");funcionario.setMatricula("202121111");funcionario.setEmail("paulo@email.com");
+
+	FuncionarioDAO dao = new FuncionarioDAO(funcionario);dao.gravar();
+
 	public static void main(String[] args) {
 		
 		Funcionario f = new Funcionario();
@@ -35,7 +29,7 @@ public class Main {
 		lerArquivo();
 		
 	}
-	
+
 	private static void gravarArquivo() {
 		
 		FileWriter arquivo = null;

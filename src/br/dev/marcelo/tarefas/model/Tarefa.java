@@ -12,18 +12,19 @@ public class Tarefa {
 	private LocalDateTime dataConclusao;
 	private Status status;
 	private Funcionario responsavel;
-	
-	public Tarefa (String titulo) {
-		
+
+	public Tarefa(String titulo) {
+
 		this.titulo = titulo;
-		
+
 	}
-	
-	public Tarefa (String titulo, LocalDateTime dataInicial) {
-		
+
+	public Tarefa(String titulo, LocalDateTime dataInicial) {
+
 	}
-	
-	public Tarefa () {}
+
+	public Tarefa() {
+	}
 
 	public String getTitulo() {
 		return titulo;
