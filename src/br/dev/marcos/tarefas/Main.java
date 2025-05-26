@@ -12,8 +12,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import br.dev.marcos.tarefas.dao.FuncionarioDAO;
+import br.dev.marcos.tarefas.gui.FrameFuncionario;
+import br.dev.marcos.tarefas.gui.FrameListaFuncionario;
 import br.dev.marcos.tarefas.model.Funcionario;
 import br.dev.marcos.tarefas.model.Tarefa;
+import br.dev.marcos.tarefas.utils.Utils;
 
 public class Main {
 
@@ -22,43 +25,49 @@ public class Main {
 
 
 	public static void main(String[] args) {
-		
-		List<String> frutas = new ArrayList<String>();
-		List<Funcionario> funcionarios = new ArrayList<Funcionario>();
-		List<Double> numeros = new ArrayList<Double>();
-		
-		frutas.add("Abacaxi");
-		frutas.add("Framboesa");
-		frutas.add("Mirtilo");
-		frutas.add("jabuticaba");
-		
-		numeros.add(4.9);
-		numeros.add(12.78);
+		new FrameListaFuncionario();
+		//new FrameFuncionario();
 		
 		
-		Funcionario funcionario = new Funcionario();
-		funcionario.setCodigo(7);
-		funcionario.setNome("Thiago pai do ano");
-		funcionario.setMatricula("202121111");
-		funcionario.setEmail("filhomota@email.com");
-		
-		Funcionario funcionario2 = new Funcionario();
-		funcionario2.setCodigo(8);
-		funcionario2.setNome("Teteca do Victor");
-		funcionario2.setMatricula("201921111");
-		funcionario2.setEmail("tetecadomal@email.com");
-		
-		funcionarios.addAll(List.of(funcionario,funcionario2));
-
-		System.out.println(frutas);
-		System.out.println(funcionarios);
-		
-		for (Funcionario f : funcionarios) {
-			System.out.printf(f.getNome() + " - " + f.getEmail() + "/");
-		}
-
-//		FuncionarioDAO dao = new FuncionarioDAO(funcionario);
+//		
+////		List<String> frutas = new ArrayList<String>();
+////		List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+////		List<Double> numeros = new ArrayList<Double>();
+////		
+////		frutas.add("Abacaxi");
+////		frutas.add("Framboesa");
+////		frutas.add("Mirtilo");
+////		frutas.add("jabuticaba");
+////		
+////		numeros.add(4.9);
+////		numeros.add(12.78);
+////		
+////		
+////		Funcionario funcionario = new Funcionario();
+////		funcionario.setCodigo(Utils.gerarUUID());
+////		funcionario.setNome("Thiago Aparecida");
+////		funcionario.setTelefone("202121111");
+////		funcionario.setEmail("thiagoaparecida@email.com");
+////		
+////		Funcionario funcionario2 = new Funcionario();
+////		funcionario2.setCodigo(Utils.gerarUUID());
+////		funcionario2.setNome("Teteca Silva");
+////		funcionario2.setTelefone("201921111");
+////		funcionario2.setEmail("tetecasilva@email.com");
+////		
+////		funcionarios.addAll(List.of(funcionario,funcionario2));
+////
+////		System.out.println(frutas);
+////		System.out.println(funcionarios);
+////		
+////		for (Funcionario f : funcionarios) {
+////			System.out.printf(f.getNome() + " - " + f.getEmail() + "/");
+////		}
+//
+//		FuncionarioDAO dao = new FuncionarioDAO(funcionario2);
 //		dao.gravar();
+//		
+//		System.out.println(funcionario2.toString());
 //		
 	}
 
