@@ -1,6 +1,5 @@
 package br.dev.marcos.tarefas;
 
-
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -13,6 +12,7 @@ import java.util.Iterator;
 
 import br.dev.marcos.tarefas.dao.FuncionarioDAO;
 import br.dev.marcos.tarefas.gui.FrameFuncionario;
+import br.dev.marcos.tarefas.gui.FrameHome;
 import br.dev.marcos.tarefas.gui.FrameListaFuncionario;
 import br.dev.marcos.tarefas.model.Funcionario;
 import br.dev.marcos.tarefas.model.Tarefa;
@@ -23,12 +23,11 @@ public class Main {
 	// determinando caminho do arquivo que será lido
 	private static String path = "C:\\Users\\25132758\\tarefas\\funcionarios.csv";
 
-
 	public static void main(String[] args) {
-		new FrameListaFuncionario();
-		//new FrameFuncionario();
-		
-		
+		new FrameHome();
+//		 new FrameListaFuncionario();
+//		new FrameFuncionario();
+
 //		
 ////		List<String> frutas = new ArrayList<String>();
 ////		List<Funcionario> funcionarios = new ArrayList<Funcionario>();
@@ -72,41 +71,40 @@ public class Main {
 	}
 
 	private static void gravarArquivo() {
-		
+
 		FileWriter arquivo = null;
 		BufferedWriter escritor = null;
-		
+
 		try {
-			
+
 			arquivo = new FileWriter(path, true);
 			escritor = new BufferedWriter(arquivo);
-			
+
 			escritor.write("Ultima linha por enquanto\n");
 			escritor.flush();
-			
+
 		} catch (Exception erro) {
 			System.out.println(erro);
 		}
-		
+
 	}
 
 	private static void lerArquivo() {
-		
 
-		//abrir arquivo para leitura
+		// abrir arquivo para leitura
 		FileReader file = null;
 		BufferedReader buffer = null;
 		try {
 			file = new FileReader(path);
 			buffer = new BufferedReader(file);
-			
+
 			String linha = buffer.readLine();
-			
+
 			while (linha != null) {
 				System.out.println(linha);
 				linha = buffer.readLine();
 			}
-			
+
 		} catch (FileNotFoundException erro) {
 			System.out.println("Arquivo não achado!");
 			System.out.println(erro.getMessage());
@@ -117,9 +115,7 @@ public class Main {
 			System.out.println("Erro genérico!");
 			System.out.println(erro.getMessage());
 		}
-		
-		
-		
+
 	}
 
 }
